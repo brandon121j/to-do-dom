@@ -87,6 +87,7 @@ complete.on('click', function() {
         // $('.completeEvery').css('backgroundColor', 'orange');
         // $('.completeEvery').css('border', '1px solid orange');
         // $('.completeEvery').css('color', 'rgb(24,24,24);');
+        $('li').addClass('line')
     }
 })
 
