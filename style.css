@@ -1,0 +1,162 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+    background-color: rgb(24,24,24);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+input {
+    padding: 7px;
+    margin: 5px;
+    margin-bottom: 15px;
+    width: 370px;
+    background-color: rgb(18,18,18);
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    height: 25px;
+    font-size: 25px;
+    caret-color: rgb(222,222,222);
+    color: rgb(222,222,222);
+}
+
+input:focus {
+    outline-width: 0;
+}
+
+button {
+    padding: 10px;
+    margin-right: 5px;
+    transition-duration: 0.4s;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(24,24,24);
+}
+
+.addButton {
+    color: green;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+.addButton:hover {
+    background-color: green;
+    color: rgb(24,24,24);
+}
+
+.removeCompleted {
+    color: yellow;
+    border: 1px solid yellow;
+    border-radius: 5px;
+}
+
+.removeCompleted:hover {
+    color: rgb(24,24,24);
+    background-color: yellow;
+}
+
+.removeAll {
+    color: red;
+    background-color: rgb(24,24,24);;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.removeAll:hover {
+    color: rgb(24,24,24);
+    background-color: red;
+}
+
+.subText {
+    margin: 10px;
+    color: rgb(222,222,222);
+}
+
+.buttons {
+    position: relative;
+    margin: 5px;
+    left: 7px
+}
+
+.results {
+    margin-top: 15px;
+    min-height: 500px;
+    width: 370px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: rgb(18,18,18);
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.to-dos {
+    color: rgb(222,222,222);
+    cursor: pointer;
+    font-style: bold;
+    font-weight: 800;
+    list-style: none;
+    max-width: 150px;
+    max-height: 25px;
+}
+
+li {
+    color: rgb(222,222,222);
+    cursor: pointer;
+    font-style: bold;
+    font-weight: 800;
+    list-style: none;
+    max-width: 150px;
+    max-height: 25px;
+}
+
+.line {
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+.line:hover {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+h1 {
+    color: rgb(222,222,222);
+}
+
+.to-dos li{
+    padding: 10px;
+    font-size: 20px;
+}
+
+.completeAll {
+    position: relative;
+    top: 800px;
+    right: 250px;
+}
+
+.completeEvery {
+    color: blue;
+    border: blue 1px solid;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.completeEvery:hover {
+    color: rgb(24,24,24);
+    background-color: blue;
+}
+
+.container {
+    position: relative;
+    right: -150px;
+}
