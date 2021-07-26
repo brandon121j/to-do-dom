@@ -28,8 +28,20 @@ picker.on('click', function(event) {
 // Adds to list
 add.on('click', function() {
     // tasks.push(input.val());
+
+    const testing = input.val();
+    var valLength = testing.trim().length;
+
+    if (input.val().length >= 1) {
     const newElement = $(`<li>${input.val()}</li><`);
     $('.to-dos').append(newElement);
+    }
+    // Validators so input doesn't accept spaces
+    else if(valLength === 0) {
+        alert('You must enter a task')
+    }
+    console.log(testing)
+    // else if ()
 })
 
 // Removes completed
@@ -47,13 +59,24 @@ rAll.on('click', function() {
         $('li').remove()
     }
     else {
-        
+
     }
 })
 
 // Completes all tasks
 complete.on('click', function() {
-    $('li').addClass('line');
+    // $('li').addClass('line');
+    if ($('li').hasClass('line')) {
+        $('.completeEvery').text('Complete All')
+        $('li').removeClass('line')
+    }
+    else {
+        $('.completeEvery').text('Uncomplete All')
+        // $('.completeEvery').css('backgroundColor', 'orange');
+        // $('.completeEvery').css('border', '1px solid orange');
+        // $('.completeEvery').css('color', 'rgb(24,24,24);');
+        $('li').addClass('line')
+    }
 })
 
 // function listUpdater() {
