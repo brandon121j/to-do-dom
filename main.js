@@ -25,6 +25,7 @@ picker.on('click', function(event) {
 
 })
 
+// Right clicking adds ability to rename task
 picker.on('contextmenu', function(e) {
     let clickedElement = $(e.target);
     let p = prompt('Rename task');
