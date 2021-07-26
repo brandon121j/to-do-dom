@@ -41,7 +41,14 @@ rComplete.on('click', function() {
 
 // Removes all tasks
 rAll.on('click', function() {
-    $('li').remove()
+    // $('li').remove()
+    let confirmBox = confirm('Are you sure you want to remove all?')
+    if (confirmBox === true) {
+        $('li').remove()
+    }
+    else {
+        
+    }
 })
 
 // Completes all tasks
