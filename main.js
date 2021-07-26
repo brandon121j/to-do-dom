@@ -25,6 +25,17 @@ picker.on('click', function(event) {
 
 })
 
+picker.on('contextmenu', function(e) {
+    let clickedElement = $(e.target);
+    let p = prompt('Rename task');
+    // clickedElement = p;
+    clickedElement[0].innerText = p;
+    e.preventDefault();
+    console.log(p)
+    console.log(clickedElement)
+    
+})
+
 // Adds to list
 add.on('click', function() {
     // tasks.push(input.val());
