@@ -32,7 +32,7 @@ picker.on('contextmenu', function(e) {
     // clickedElement = p;
     clickedElement[0].innerText = p;
     e.preventDefault();
-    console.log(p)
+    // console.log(p)
     console.log(clickedElement)
     
 })
