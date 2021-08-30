@@ -1,110 +1,60 @@
-const add = $(".addButton");
+const completeAllTasks = $('.completeEvery');
 
-let picker = $(".to-dos")
+const removeComplete = $('.removeCompleted');
 
-const taskList = $('.results')
+const addButton = $('.addButton');
+
+const removeAll = $('.removeAll');
+
+const taskList = $('.results');
+
+let toDoSelector = $('.to-dos');
 
 let input = $('#textInput');
 
-const rComplete = $('.removeCompleted');
+const taskCompleter = (e) => {
+    const clickedElement = $(e.target);
+    clickedElement.hasClass('line') ? clickedElement.removeClass('line') : clickedElement.addClass('line');
+}
 
-const rAll = $('.removeAll');
+const completeAll = () => {
+    $('li').hasClass('line') ? $('.completeEvery').text('Complete All') + $('li').removeClass('line') : $('.completeEvery').text('Uncomplete All') + $('li').addClass('line');
+}
 
-const complete = $('.completeEvery')
+const removeAllTasks = () => {
+    let confirmBox = confirm('Are you sure you want to remove all?');
+    if (confirmBox === true) {$('li').remove()};
+}
 
-// Completes clicked task
-picker.on('click', function(event) {
-    const clickedElement = $(event.target);
-    if (clickedElement.hasClass('line')) {
-        clickedElement.removeClass('line')
+const removeCompletedTasks = () => {
+    if ($('li').hasClass('line')) {$('.line').remove()};
+}
+
+const addToDo = () => {
+    if (input.val().length >= 1) {
+        let newToDo = $(`<li>${input.val()}</li><`);
+        $('.to-dos').append(newToDo);
+    } else if (input.val().length === 0) {
+        alert('You must enter a task');
     }
-    else {
-        clickedElement.addClass('line')
-    }
-    console.log(clickedElement.class)
+}
 
-})
-
-// Right clicking adds ability to rename task
-picker.on('contextmenu', function(e) {
+const taskRenamer = (e) => {
     let clickedElement = $(e.target);
     let p = prompt('Rename task');
-    // clickedElement = p;
     clickedElement[0].innerText = p;
     e.preventDefault();
-    // console.log(p)
-    console.log(clickedElement)
-    
-})
+}
 
-// Adds to list
-add.on('click', function() {
-    // tasks.push(input.val());
+toDoSelector.on('click', taskCompleter);
 
-    const testing = input.val();
-    var valLength = testing.trim().length;
+toDoSelector.on('contextmenu', taskRenamer);
 
-    if (input.val().length >= 1) {
-    const newElement = $(`<li>${input.val()}</li><`);
-    $('.to-dos').append(newElement);
-    }
-    // Validators so input doesn't accept spaces
-    else if(valLength === 0) {
-        alert('You must enter a task')
-    }
-    console.log(testing)
-    // else if ()
-})
+addButton.on('click', addToDo);
 
-// Removes completed
-rComplete.on('click', function() {
-    if ($('li').hasClass('line')) {
-        $('.line').remove()
-    }
-})
+removeComplete.on('click', removeCompletedTasks);
 
-// Removes all tasks
-rAll.on('click', function() {
-    // $('li').remove()
-    let confirmBox = confirm('Are you sure you want to remove all?')
-    if (confirmBox === true) {
-        $('li').remove()
-    }
-    else {
+removeAll.on('click', removeAllTasks);
 
-    }
-})
+completeAllTasks.on('click', completeAll)
 
-// Completes all tasks
-complete.on('click', function() {
-    // $('li').addClass('line');
-    if ($('li').hasClass('line')) {
-        $('.completeEvery').text('Complete All')
-        $('li').removeClass('line')
-    }
-    else {
-        $('.completeEvery').text('Uncomplete All')
-        // $('.completeEvery').css('backgroundColor', 'orange');
-        // $('.completeEvery').css('border', '1px solid orange');
-        // $('.completeEvery').css('color', 'rgb(24,24,24);');
-        $('li').addClass('line')
-    }
-})
-
-// function listUpdater() {
-//     for (let i = 0; i < tasks.length; i++) {
-//         console.log(tasks);
-//         const newElement = $(`<div class="to-dos">${tasks}</div>`);
-//         $('.to-dos').append(newElement);
-//     }
-// }
-
-// picker.on('mouseover', function(event) {
-//     const clickedElement = $(event.target);
-//     clickedElement.css('text-decoration', 'underline')
-// })
-
-// picker.on('mouseout', function(event) {
-//     const clickedElement = $(event.target);
-//     clickedElement.css('text-decoration', 'none')
-// })
