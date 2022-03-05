@@ -1,23 +1,6 @@
-# To Do: DOM
+<h1>to-do-dom</h1>
+<p>One of the few projects I created during the first months of codeImmersives. This project implements a 0 character Validator, a create todo function, right click to rename function, delete all completed function, and a delete all todos function</p>
 
-> In this assignment, we'll be creating a to do list... from scratch! 
-> 
-> Feel free to take creative liberties with the design and user interface of your application.
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/77591826/156864759-ceea210f-1d3e-4a87-8dec-6237d80eab85.gif)
 
-## An example finished product
-
-<img src="to-do-dom.gif" width=800 />
-
-## Requirements
-
-* You make at least 3 commits in git
-* Your project is hosted on GitHub Pages
-* Users have the ability to add new to-do items
-* Users have the ability to view to-do items
-* Allow users to clear all to-do items
-
-## Stretch goals
-
-* Users have the ability to toggle the completion of to-do items
-* Allow users to delete individual to-do items
-* Allow users to edit existing to-do items
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/77591826/156864760-f4208713-60ee-4241-b0ad-0afc659e550d.gif)
